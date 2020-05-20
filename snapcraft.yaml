@@ -31,6 +31,6 @@ apps:
       - network
       - network-bind
   influx:
-    command: bin/influx
+    command: bin/influx-launch.sh
     plugs:
       - network
