@@ -1,0 +1,31 @@
+name: influxdb-lukewh
+version: '1.8'
+summary: InfluxDB
+description: |
+  InfluxDB
+
+base: core18
+confinement: strict
+grade: stable
+
+parts:
+  influxdb:
+    plugin: python
+    source: https://github.com/influxdata/influxdb.git
+    source-tag: v1.8.0
+    build-snaps:
+      - go
+    override-build: |
+      python3 build.py
+
+apps:
+  influxd:
+    command: influxd
+    daemon: simple
+    plugs:
+      - network
+      - network-bind
+  influx:
+    command: influx
+    plugs:
+      - network
