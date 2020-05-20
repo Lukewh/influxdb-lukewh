@@ -9,6 +9,11 @@ confinement: strict
 grade: stable
 
 parts:
+  scripts:
+    source: scripts
+    plugin: dump
+    organize:
+      influxd-launch.sh: bin/
   influxdb:
     plugin: python
     source: https://github.com/influxdata/influxdb.git
