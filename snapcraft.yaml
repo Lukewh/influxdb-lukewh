@@ -19,16 +19,16 @@ parts:
     build-snaps:
       - go
     override-build: |
-      python3 build.py
+      python3 build.py --outdir $SNAPCRAFT_PART_INSTALL/bin
 
 apps:
   influxd:
-    command: influxd
+    command: bin/influxd
     daemon: simple
     plugs:
       - network
       - network-bind
   influx:
-    command: influx
+    command: bin/influx
     plugs:
       - network
