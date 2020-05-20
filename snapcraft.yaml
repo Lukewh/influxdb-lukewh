@@ -13,7 +13,7 @@ parts:
     source: scripts
     plugin: dump
     organize:
-      influxd-launch.sh: bin/
+      'influxd-launch.sh': bin/
   influxdb:
     plugin: python
     source: https://github.com/influxdata/influxdb.git
@@ -25,12 +25,12 @@ parts:
 
 apps:
   influxd:
-    command: bin/influxd
+    command: bin/influxd-launch.sh
     daemon: simple
     plugs:
       - network
       - network-bind
   influx:
-    command: bin/influx-launch.sh
+    command: bin/influx
     plugs:
       - network
