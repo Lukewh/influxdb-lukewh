@@ -9,11 +9,7 @@ confinement: strict
 grade: stable
 
 architectures:
-  build-on:
-    - amd64
-    - i386
-    - armhf
-    - arm64
+  - build-on: [amd64, i386, armhf, arm64]
 
 parts:
   influxdb:
