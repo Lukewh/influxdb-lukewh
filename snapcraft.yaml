@@ -8,8 +8,6 @@ base: core18
 confinement: strict
 grade: stable
 
-architectures: amd64
-
 parts:
   influxdb:
     plugin: python
