@@ -8,8 +8,7 @@ base: core18
 confinement: strict
 grade: stable
 
-architectures:
-  - build-on: [amd64, i386, armhf, arm64]
+architectures: [amd64, i386, armhf, arm64]
 
 parts:
   influxdb:
